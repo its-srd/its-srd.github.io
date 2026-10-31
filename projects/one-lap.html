@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>One Lap, Soham Dhage</title>
+<meta name="description" content="A Python telemetry analysis of the pole and P2 laps from Q3 at Monza 2025, with a ghost car replay.">
+<meta name="theme-color" content="#0F1E28">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://its-srd.github.io/projects/one-lap.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="One Lap, Soham Dhage">
+<meta property="og:description" content="A Python telemetry analysis of the pole and P2 laps from Q3 at Monza 2025, with a ghost car replay.">
+<meta property="og:url" content="https://its-srd.github.io/projects/one-lap.html">
+<meta property="og:image" content="https://its-srd.github.io/assets/share.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" href="../assets/fonts/newsreader.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+
+<nav class="nav nav--stay" aria-label="Main">
+  <a class="back" href="../index.html#projects">
+    <svg viewBox="0 0 20 12" width="20" height="12" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M20 6H1.5M6.5 1L1.5 6L6.5 11"/></svg>
+    Back to projects
+  </a>
+  <div class="nav__links"><a href="../index.html">Soham Dhage</a></div>
+</nav>
+
+<header class="doc-head doc-head--lap">
+  <p class="doc-kicker">One Lap</p>
+  <h1 class="doc-title">Where 0.077 seconds went at Monza</h1>
+  <p class="doc-context">A personal project from October 2026: F1 qualifying telemetry from Q3 at the 2025 Italian Grand Prix, analysed in Python.</p>
+</header>
+
+<main class="doc">
+  <div class="doc-row">
+    <h2 class="doc-row__label">The question</h2>
+    <div class="doc-row__body">
+      <p>Pole position at Monza was decided by 0.077 s. Where on the lap was that time won, and how far can the public telemetry be trusted to say so?</p>
+    </div>
+  </div>
+
+  <div class="embed">
+    <iframe src="../assets/projects/one-lap/monza-pole-animation.html?v=2" title="Ghost car replay of the VER and NOR qualifying laps at Monza, with track map, chase camera and speed readouts" loading="lazy"></iframe>
+  </div>
+  <p class="embed__note">The replay is interactive. <a href="../assets/projects/one-lap/monza-pole-animation.html?v=2">Open it on its own page</a>.</p>
+
+  <div class="doc-row">
+    <h2 class="doc-row__label">What I did</h2>
+    <div class="doc-row__body">
+      <ul class="doc-list">
+        <li>Built a delta time analysis of the pole and P2 laps in Python.</li>
+        <li>Traced the gap to straight line speed and braking about 10 m later into Turn 1.</li>
+        <li>Lined up both laps on a common clock to build the ghost car replay above.</li>
+      </ul>
+    </div>
+  </div>
+
+  <figure class="doc-fig doc-fig--plot">
+    <img src="../assets/projects/one-lap/speed-trace-turn1.png" srcset="../assets/projects/one-lap/speed-trace-turn1-1400.webp 1400w, ../assets/projects/one-lap/speed-trace-turn1.png 2344w" sizes="100vw" decoding="async" alt="Speed against distance for both laps, with a zoomed panel showing VER braking about 10 metres later than NOR into Turn 1." width="2344" height="1100" loading="lazy">
+    <figcaption>Speed traces for both laps. The zoomed panel shows the braking point into Turn 1.</figcaption>
+  </figure>
+
+  <div class="doc-row">
+    <h2 class="doc-row__label">The result</h2>
+    <div class="doc-row__body">
+      <p>The official 0.077 s gap reproduced to <u>within 0.006 s</u>, with a lead of <u>about 0.15 s</u> already built by Turn 2.</p>
+    </div>
+  </div>
+
+  <div class="doc-row">
+    <h2 class="doc-row__label">How I knew it was right</h2>
+    <div class="doc-row__body">
+      <p>Reproducing the official gap was the first check. Along the way I detected a faulty distance channel and flagged 0.9 s data dropouts as low confidence, which prevented a wrong conclusion.</p>
+    </div>
+  </div>
+
+  <figure class="doc-fig doc-fig--plot">
+    <img src="../assets/projects/one-lap/gap-data-dropouts.png" alt="Gap between the two laps against distance, with two shaded bands marking 0.9 second data dropouts." width="1167" height="392" loading="lazy">
+    <figcaption>The gap across the lap, with the 0.9 s data dropouts shaded.</figcaption>
+  </figure>
+</main>
+
+<a class="next next--cranfield" href="cranfield.html">
+  <span class="next__tab">Cranfield MSc</span>
+  <span class="next__body">
+    <span class="next__hint">Next folder</span>
+    <span class="next__title">Fan powered suction for inverted vehicle adhesion</span>
+  </span>
+</a>
+<footer class="doc-foot doc-foot--cranfield">
+  <a href="../index.html#projects">All projects</a>
+  <a href="mailto:sohamdhage751@gmail.com">sohamdhage751@gmail.com</a>
+</footer>
+
+<script src="../assets/vendor/gsap.min.js"></script>
+<script src="../assets/vendor/ScrollTrigger.min.js"></script>
+<script src="../assets/vendor/lenis.min.js"></script>
+<script src="../js/main.js"></script>
+</body>
+</html>

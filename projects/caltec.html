@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Caltec jet pump, Soham Dhage</title>
+<meta name="description" content="A multiphase CFD validation study of a surface jet pump, delivered for Caltec Production Solutions.">
+<meta name="theme-color" content="#0F1E28">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://its-srd.github.io/projects/caltec.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Caltec jet pump, Soham Dhage">
+<meta property="og:description" content="A multiphase CFD validation study of a surface jet pump, delivered for Caltec Production Solutions.">
+<meta property="og:url" content="https://its-srd.github.io/projects/caltec.html">
+<meta property="og:image" content="https://its-srd.github.io/assets/share.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" href="../assets/fonts/newsreader.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+
+<nav class="nav nav--stay" aria-label="Main">
+  <a class="back" href="../index.html#projects">
+    <svg viewBox="0 0 20 12" width="20" height="12" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M20 6H1.5M6.5 1L1.5 6L6.5 11"/></svg>
+    Back to projects
+  </a>
+  <div class="nav__links"><a href="../index.html">Soham Dhage</a></div>
+</nav>
+
+<header class="doc-head doc-head--caltec">
+  <p class="doc-kicker">Caltec jet pump</p>
+  <h1 class="doc-title">CFD validation of multiphase surface jet pump</h1>
+  <p class="doc-context">CFD Consultant (Contract) for Caltec Production Solutions Ltd, which supplies surface jet pump systems to the oil and gas industry. June to July 2026.</p>
+</header>
+
+<main class="doc">
+  <div class="doc-row">
+    <h2 class="doc-row__label">The question</h2>
+    <div class="doc-row__body">
+      <p>A surface jet pump uses a high pressure flow to entrain a low pressure one. Could a CFD model predict that entrainment reliably enough to support the client's targets?</p>
+    </div>
+  </div>
+
+</main>
+
+<section class="stage stage--jet" aria-label="How a surface jet pump works">
+  <div class="stage__pin">
+    <div class="jet">
+      <canvas class="jet__flow" aria-hidden="true"></canvas>
+      <svg class="jet__sketch" viewBox="0 0 1000 420" role="img" aria-labelledby="jet-title" fill="none">
+        <title id="jet-title">Generic cutaway sketch of a surface jet pump. High pressure water enters from the left and accelerates through a nozzle. Low pressure gas is drawn in from an inlet above. The two mix along a narrow mixing tube, then slow down through a widening diffuser and leave on the right.</title>
+          <path class="jet__edge draw" pathLength="1" d="M234 74V170C234 185 225 196 200 196H54" data-at="0" data-dur=".08"/>
+          <path class="jet__wall draw" pathLength="1" d="M234 74V170C234 185 225 196 200 196H54" data-at="0" data-dur=".08"/>
+          <path class="jet__edge draw" pathLength="1" d="M306 74V165C306 180 340 190 420 217H620L900 195" data-at=".01" data-dur=".12"/>
+          <path class="jet__wall draw" pathLength="1" d="M306 74V165C306 180 340 190 420 217H620L900 195" data-at=".01" data-dur=".12"/>
+          <path class="jet__edge draw" pathLength="1" d="M54 264H200C225 264 250 302 300 302C350 302 380 252 420 243H620L900 265" data-at=".01" data-dur=".12"/>
+          <path class="jet__wall draw" pathLength="1" d="M54 264H200C225 264 250 302 300 302C350 302 380 252 420 243H620L900 265" data-at=".01" data-dur=".12"/>
+          <path class="jet__nozzle draw" pathLength="1" d="M212 196C250 200 285 214 324 222V238C285 246 250 260 212 264" data-at=".07" data-dur=".06"/>
+          <rect class="jet__flange" x="40" y="172" width="16" height="116" rx="1.5" data-at=".1" data-dur=".03"/>
+          <rect class="jet__flange" x="176" y="60" width="188" height="16" rx="1.5" data-at=".1" data-dur=".03"/>
+          <rect class="jet__flange" x="898" y="168" width="16" height="124" rx="1.5" data-at=".12" data-dur=".03"/>
+          <path class="sk sk--leader" d="M305 345L305 240" data-at=".12" data-dur=".03"/>
+          <path class="sk sk--leader" d="M520 170L520 217" data-at=".12" data-dur=".03"/>
+          <path class="sk sk--leader" d="M760 290L760 256" data-at=".12" data-dur=".03"/>
+      </svg>
+      <span class="tag tag--hp" style="left:0;top:31%" data-at=".2"><i class="tag__dot tag__dot--water"></i>High pressure water</span>
+      <span class="tag" style="left:37%;top:5%" data-at=".45"><i class="tag__dot tag__dot--gas"></i>Low pressure gas</span>
+      <span class="tag tag--mid" style="left:30.5%;top:82.5%" data-at=".12">Nozzle</span>
+      <span class="tag tag--mid" style="left:52%;top:35%" data-at=".12">Mixing tube</span>
+      <span class="tag tag--mid" style="left:76%;top:69.5%" data-at=".12">Diffuser</span>
+      <span class="tag tag--end" style="right:0;top:31%" data-at=".82">Mixed flow out</span>
+    </div>
+    <div class="stage__steps">
+      <p class="stage__step" data-from="0" data-to=".16">A surface jet pump has no moving parts. This is a generic sketch of how one works, not the client's geometry.</p>
+      <p class="stage__step" data-from=".18" data-to=".41">High pressure water enters from the left. The nozzle narrows the stream into a fast jet, and its pressure falls.</p>
+      <p class="stage__step" data-from=".43" data-to=".58">That low pressure draws gas in through the inlet above, around the nozzle and into the throat.</p>
+      <p class="stage__step" data-from=".6" data-to=".78">Along the mixing tube the fast water drags the gas with it, and the gas spreads through the stream until the two are evenly mixed.</p>
+      <p class="stage__step" data-from=".8" data-to="1">The diffuser widens, slowing the mixture and recovering pressure before it leaves through the discharge.</p>
+    </div>
+  </div>
+</section>
+
+<div class="doc">
+  <div class="doc-row">
+    <h2 class="doc-row__label">What I did</h2>
+    <div class="doc-row__body">
+      <ul class="doc-list">
+        <li>Delivered the study independently, building a multiphase model in ANSYS Fluent using VOF, against the client's requirements.</li>
+        <li>Found the low pressure entrainment was underpredicted by 60%, diagnosed the cause using transient CFD and corrected the set up.</li>
+        <li>Ran a parametric study across seven operating conditions and recommended the boundary conditions.</li>
+        <li>Issued the technical report, setting out the approach, inputs, assumptions and findings.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="doc-row">
+    <h2 class="doc-row__label">The result</h2>
+    <div class="doc-row__body">
+      <p>Low pressure entrainment moved from 60% out to <u>within 2.5%</u>. The recommended boundary conditions met the client's targets <u>within 6%</u>, and the study was delivered <u>within one month</u>.</p>
+    </div>
+  </div>
+
+  <div class="doc-row">
+    <h2 class="doc-row__label">How I knew it was right</h2>
+    <div class="doc-row__body">
+      <p>I validated the model against industrial reference data, matching the high pressure mass flow to <u>within 3.5%</u>. A result that disagreed with that data was treated as a question to answer, not a number to report.</p>
+    </div>
+  </div>
+</div>
+
+<a class="next next--lap" href="one-lap.html">
+  <span class="next__tab">One Lap</span>
+  <span class="next__body">
+    <span class="next__hint">Next folder</span>
+    <span class="next__title">Where 0.077 seconds went at Monza</span>
+  </span>
+</a>
+<footer class="doc-foot doc-foot--lap">
+  <a href="../index.html#projects">All projects</a>
+  <a href="mailto:sohamdhage751@gmail.com">sohamdhage751@gmail.com</a>
+</footer>
+
+<script src="../assets/vendor/gsap.min.js"></script>
+<script src="../assets/vendor/ScrollTrigger.min.js"></script>
+<script src="../assets/vendor/lenis.min.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/stage.js"></script>
+<script src="../js/caltec.js"></script>
+</body>
+</html>

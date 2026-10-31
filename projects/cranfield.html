@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cranfield MSc, Soham Dhage</title>
+<meta name="description" content="MSc thesis on fan powered suction for inverted vehicle adhesion, and deep learning denoising of MRI data, at Cranfield University.">
+<meta name="theme-color" content="#0F1E28">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://its-srd.github.io/projects/cranfield.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Cranfield MSc, Soham Dhage">
+<meta property="og:description" content="MSc thesis on fan powered suction for inverted vehicle adhesion, and deep learning denoising of MRI data, at Cranfield University.">
+<meta property="og:url" content="https://its-srd.github.io/projects/cranfield.html">
+<meta property="og:image" content="https://its-srd.github.io/assets/share.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" href="../assets/fonts/newsreader.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+
+<nav class="nav nav--stay" aria-label="Main">
+  <a class="back" href="../index.html#projects">
+    <svg viewBox="0 0 20 12" width="20" height="12" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M20 6H1.5M6.5 1L1.5 6L6.5 11"/></svg>
+    Back to projects
+  </a>
+  <div class="nav__links"><a href="../index.html">Soham Dhage</a></div>
+</nav>
+
+<header class="doc-head">
+  <p class="doc-kicker">Cranfield MSc</p>
+  <h1 class="doc-title">Fan powered suction for inverted vehicle adhesion</h1>
+  <p class="doc-context">Two pieces of work from my MSc in Computational Fluid Dynamics at Cranfield University: my thesis, and a group project in deep learning.</p>
+</header>
+
+<main class="doc doc--even">
+  <section aria-label="Thesis">
+    <p class="doc__part-meta doc__part-meta--first">MSc thesis, June to August 2025. Supervised by Dr Tom-Robin Teschner.</p>
+
+    <div class="doc-row">
+      <h2 class="doc-row__label">The question</h2>
+      <div class="doc-row__body">
+        <p>The McMurtry Spéirling has shown that fan driven suction can generate extraordinary downforce which, unlike a wing, does not depend on speed. Could a benchmark road car stay adhered upside down with such a system?</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+    <section class="stage stage--suction" aria-label="How the suction system works">
+    <div class="stage__pin">
+      <div class="suction">
+        <canvas class="suction__flow" aria-hidden="true"></canvas>
+        <svg class="suction__sketch" viewBox="0 0 1000 470" role="img" aria-labelledby="suction-title" fill="none">
+          <title id="suction-title">Side view of a road car upside down against a ceiling. Skirts and restrictor walls between the wheels seal a pocket between the underbody and the ceiling, twin fans draw air out of it, and the resulting downforce exceeds the required load.</title>
+          <path class="sk sk--ceiling" pathLength="1" d="M10 70H990" data-at="0" data-dur=".08"/>
+          <path class="sk sk--hatch" d="M20 70L32 58M42 70L54 58M64 70L76 58M86 70L98 58M108 70L120 58M130 70L142 58M152 70L164 58M174 70L186 58M196 70L208 58M218 70L230 58M240 70L252 58M262 70L274 58M284 70L296 58M306 70L318 58M328 70L340 58M350 70L362 58M372 70L384 58M394 70L406 58M416 70L428 58M438 70L450 58M460 70L472 58M482 70L494 58M504 70L516 58M526 70L538 58M548 70L560 58M570 70L582 58M592 70L604 58M614 70L626 58M636 70L648 58M658 70L670 58M680 70L692 58M702 70L714 58M724 70L736 58M746 70L758 58M768 70L780 58M790 70L802 58M812 70L824 58M834 70L846 58M856 70L868 58M878 70L890 58M900 70L912 58M922 70L934 58M944 70L956 58M966 70L978 58" data-at=".04" data-dur=".06"/>
+          <path class="sk draw" pathLength="1" d="M 80.3 156 C 70 190.4 73.4 220.5 95.8 229.1 C 156 250.6 233.4 263.5 306.5 276.4 C 353.8 306.5 396.8 336.6 439.8 346.9 C 500 358.1 568.8 358.1 620.4 343.5 C 706.4 319.4 792.4 285 861.2 272.1 C 887 267.8 908.5 263.5 921.4 254.9 C 930 233.4 925.7 190.4 917.1 164.6 C 908.5 149.1 882.7 133.6 850.2 121.6 A 75.7 75.7 0 0 1 700.2 121.6 L 299.8 121.6 A 75.7 75.7 0 0 1 149.8 121.6 C 121.6 123.3 95.8 128.5 87.2 137.1 C 82.9 143.1 81.2 149.1 80.3 156 Z" data-at=".03" data-dur=".15"/>
+          <path class="sk sk--detail draw" pathLength="1" d="M 326.3 280.7 C 366.7 309.1 405.4 330.6 444.1 338.3 C 500 347.8 568.8 347.8 616.1 334.9 C 663.4 322 706.4 304.8 733.9 291.9 L 326.3 280.7" data-at="0.120" data-dur=".05"/>
+          <path class="sk sk--detail draw" pathLength="1" d="M 474.2 341.8 L 474.2 285" data-at="0.126" data-dur=".05"/>
+          <path class="sk sk--detail draw" pathLength="1" d="M 598.9 339.2 L 598.9 288.4" data-at="0.132" data-dur=".05"/>
+          <path class="sk sk--detail draw" pathLength="1" d="M 457 285 L 457 143.1" data-at="0.138" data-dur=".05"/>
+          <path class="sk sk--detail draw" pathLength="1" d="M 607.5 288.4 L 607.5 143.1" data-at="0.144" data-dur=".05"/>
+          <path class="sk sk--detail draw" pathLength="1" d="M 302.2 143.1 L 697.8 143.1" data-at="0.150" data-dur=".05"/>
+          <path class="sk sk--detail draw" pathLength="1" d="M 300.5 273 L 295.3 156" data-at="0.156" data-dur=".05"/>
+          <path class="sk sk--detail draw" pathLength="1" d="M 87.2 207.6 C 113 214.5 138.8 217.9 164.6 223.1" data-at="0.162" data-dur=".05"/>
+          <path class="sk sk--detail draw" pathLength="1" d="M 865.5 269.5 C 887 262.6 904.2 254.9 917.1 242" data-at="0.168" data-dur=".05"/>
+          <path class="sk sk--detail draw" pathLength="1" d="M 315.1 276.4 L 295.3 291.9 L 328 295.3" data-at="0.174" data-dur=".05"/>
+          <g class="sk__wheel" data-at="0.10" data-dur=".06"><circle class="sk" cx="224.8" cy="131.9" r="61.9"/><circle class="sk sk--detail" cx="224.8" cy="131.9" r="40.4"/><circle class="sk sk--detail" cx="224.8" cy="131.9" r="11.2"/><path class="sk sk--detail" d="M236.8 131.9L263.5 131.9M228.5 143.4L236.8 168.7M215.1 139.0L193.5 154.7M215.1 124.8L193.5 109.2M228.5 120.5L236.8 95.1"/></g>
+          <g class="sk__wheel" data-at="0.12" data-dur=".06"><circle class="sk" cx="775.2" cy="131.9" r="61.9"/><circle class="sk sk--detail" cx="775.2" cy="131.9" r="40.4"/><circle class="sk sk--detail" cx="775.2" cy="131.9" r="11.2"/><path class="sk sk--detail" d="M787.2 131.9L813.9 131.9M778.9 143.4L787.2 168.7M765.5 139.0L743.9 154.7M765.5 124.8L743.9 109.2M778.9 120.5L787.2 95.1"/></g>
+          <rect class="sk__skirt" x="319.4" y="94.1" width="361.2" height="27.5" data-at=".24" data-dur=".08"/>
+          <path class="sk sk--seal draw" pathLength="1" d="M 319.4 121.6 L 319.4 94.1 L 680.6 94.1 L 680.6 121.6" data-at=".24" data-dur=".1"/>
+          <path class="sk" d="M 369.3 121.6 L 369.3 186.1 M 458.7 186.1 L 458.7 121.6" data-at=".42" data-dur=".05"/>
+          <path class="sk" d="M 541.3 121.6 L 541.3 186.1 M 630.7 186.1 L 630.7 121.6" data-at=".42" data-dur=".05"/>
+          <path class="sk sk--force draw" pathLength="1" d="M603.2 456V362" data-at=".7" data-dur=".08"/>
+          <path class="sk sk--force" d="M596.2 373L603.2 362L610.2 373" data-at=".77" data-dur=".02"/>
+          <path class="sk sk--force draw" pathLength="1" d="M396.8 362V448" data-at=".7" data-dur=".08"/>
+          <path class="sk sk--force" d="M389.8 437L396.8 448L403.8 437" data-at=".77" data-dur=".02"/>
+          <path class="sk sk--leader" d="M319.4 40L319.4 107.8" data-at=".28" data-dur=".04"/>
+          <path class="sk sk--leader" d="M500.0 40L500.0 107.8" data-at=".3" data-dur=".04"/>
+          <path class="sk sk--leader" d="M586.0 40L586.0 147.4" data-at=".46" data-dur=".04"/>
+        </svg>
+        <span class="tag tag--ceiling" style="left:1%;top:5%" data-at=".03">Ceiling</span>
+        <span class="tag tag--mid" style="left:31.9%;top:5%" data-at=".28">Restrictor walls</span>
+        <span class="tag tag--mid" style="left:50%;top:5%" data-at=".3">Skirts</span>
+        <span class="tag tag--mid tag--fans" style="left:60.6%;top:5%" data-at=".46">Twin fans</span>
+        <span class="tag tag--scale" style="left:1%;top:90%" data-at=".52"><i></i>Lower pressure</span>
+        <span class="tag tag--before" style="right:61%;top:84%" data-at=".78">34.6 kN required</span>
+        <span class="tag" style="left:61%;top:84%;margin-left:12px" data-at=".78"><u>37.9 kN</u> downforce</span>
+      </div>
+      <div class="stage__steps">
+        <p class="stage__step" data-from="0" data-to=".21">A modified DrivAer, the benchmark road car geometry, upside down against a ceiling. This is a schematic, with the clearances enlarged so they can be seen.</p>
+        <p class="stage__step" data-from=".23" data-to=".42">Restrictor walls and side skirts, fitted inside the wheelbase, seal the underbody to form a suction pocket.</p>
+        <p class="stage__step" data-from=".44" data-to=".67">Twin fans beneath the car draw air out of the pocket and its pressure falls. Air can only leak back through the narrow gap under the skirts.</p>
+        <p class="stage__step" data-from=".69" data-to="1">At a suction of 21 kPa the pocket produces <u>about 37.9 kN</u> of downforce, above the <u>34.6 kN</u> required to carry the vehicle and fans with a safety factor of 1.8.</p>
+      </div>
+    </div>
+  </section>
+
+<div class="doc doc--even">
+  <section aria-label="Thesis method and results">
+    <div class="doc-row">
+      <h2 class="doc-row__label">What I did</h2>
+      <div class="doc-row__body">
+        <ul class="doc-list">
+          <li>Cleaned up the DrivAer reference geometry in SpaceClaim, adding underbody restrictor walls, skirts and twin fan openings to form a sealed suction pocket, and made it watertight for meshing.</li>
+          <li>Ran steady RANS CFD on HPC with the realizable k-ε model, mapping downforce against suction level, ride height and skirt clearance across 17 cases.</li>
+          <li>Automated meshing, runs, image generation and file saving with Fluent TUI journals and Python, reducing each repeated case to two or three clicks.</li>
+          <li>Sized the fan system from the CFD results.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="doc-row">
+      <h2 class="doc-row__label">The result</h2>
+      <div class="doc-row__body">
+        <p><u>About 37.9 kN</u> of downforce at a 21 kPa design point, <u>9.6% above</u> the 34.6 kN target. The best configuration had a ride height of <u>about 20 mm</u> and a skirt clearance of <u>about 10 mm</u>.</p>
+        <p>Raising either clearance let air leak around the skirts and weakened the suction pocket, so effective sealing is critical to inverted adhesion.</p>
+      </div>
+    </div>
+
+    <div class="doc-row">
+      <h2 class="doc-row__label">Fan system</h2>
+      <div class="doc-row__body">
+        <dl class="spec">
+          <div><dt>Total mass flow</dt><dd>10.85 kg/s</dd></div>
+          <div><dt>Per fan duty</dt><dd>4.52 m³/s at 21 kPa</dd></div>
+          <div><dt>Tip speed</dt><dd>About 187 m/s</dd></div>
+          <div><dt>Fan speed</dt><dd>7,440 to 7,770 rpm</dd></div>
+          <div><dt>Electrical input, two fans</dt><dd>About 278 kW</dd></div>
+          <div><dt>Energy for a 120 s inverted run</dt><dd>About 9.3 kWh</dd></div>
+          <div><dt>Fan system mass, two modules</dt><dd>270 to 320 kg</dd></div>
+        </dl>
+      </div>
+    </div>
+
+    <div class="doc-row">
+      <h2 class="doc-row__label">How I knew it was right</h2>
+      <div class="doc-row__body">
+        <p>Before comparing any design cases, I benchmarked turbulence models, ran mesh independence studies and assessed y+. Hand calculations set and checked the targets. The work was presented in a written technical report and a poster.</p>
+      </div>
+    </div>
+
+    <div class="doc-row">
+      <h2 class="doc-row__label">Poster</h2>
+      <div class="doc-row__body">
+        <a class="poster" href="../assets/projects/cranfield/poster.pdf">
+          <img src="../assets/projects/cranfield/poster.webp" srcset="../assets/projects/cranfield/poster-1400.webp 1400w, ../assets/projects/cranfield/poster.webp 2667w" sizes="100vw" decoding="async" alt="MSc thesis poster, Will It Stick? A Feasibility Study on Fan-powered cars to Drive Upside Down. It sets out the motivation, aim, method, fan system requirements and results: at a suction of 21 kPa the system produced about 37.9 kN, and the best configuration had a ride height of about 20 mm and a skirt clearance of about 10 mm." width="2667" height="1500" loading="lazy">
+        </a>
+        <p class="poster__link"><a href="../assets/projects/cranfield/poster.pdf">Open the full poster (PDF)</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="doc__part" aria-labelledby="mri">
+    <h2 class="doc__part-title" id="mri">Deep learning denoising of MRI data</h2>
+    <p class="doc__part-meta">Cranfield University group project, March to May 2025.</p>
+
+    <div class="doc-row">
+      <h3 class="doc-row__label">What I did</h3>
+      <div class="doc-row__body">
+        <p>Trained 3D UNet and diffusion based models in Python and TensorFlow on large datasets, using the university HPC cluster, and tuned their hyperparameters.</p>
+      </div>
+    </div>
+  </section>
+</div>
+
+    <section class="stage stage--unet" aria-label="Structure of the UNet">
+    <div class="stage__pin">
+      <div class="unet">
+        <svg class="unet__sketch" viewBox="0 0 1200 620" role="img" aria-labelledby="unet-title" fill="none">
+          <title id="unet-title">UNet structure. A noised image at 256 by 256 passes down through convolution and max pooling stages of 128, 128, 256, 384 and 512 channels to a bottleneck, then back up through up-convolutions, with copy and concatenate connections joining matching stages, to a single channel output of predicted noise.</title>
+          <image class="u-panel" href="../assets/projects/cranfield/noised-image.webp" x="2" y="40" width="88" height="88" data-at="0.000" data-dur=".04"/>
+          <text class="u-cap u-start" x="2" y="146" data-at="0.008" data-dur=".03">Noised image</text>
+          <path class="u-line u-line--conv draw" pathLength="1" d="M92 95H108" data-at="0.025" data-dur="0.03"/>
+          <path class="u-line u-line--conv" d="M102 91L108 95L102 99" data-at="0.045" data-dur=".008"/>
+          <text class="u-size u-start" x="2" y="166" data-at="0.025" data-dur=".02">256 × 256</text>
+          <g class="grow" data-at="0.025" data-dur=".035"><rect class="u-block" x="110.5" y="40" width="3" height="110"/></g>
+          <text class="u-num" x="112" y="34" data-at="0.041" data-dur=".02">1</text>
+          <path class="u-line u-line--conv draw" pathLength="1" d="M115.5 95.0H157.0" data-at="0.040" data-dur="0.03"/>
+          <path class="u-line u-line--conv" d="M151.0 91.0L157.0 95.0L151.0 99.0" data-at="0.060" data-dur=".008"/>
+          <g class="grow" data-at="0.050" data-dur=".035"><rect class="u-block" x="159.0" y="40" width="10" height="110"/></g>
+          <text class="u-num" x="164" y="34" data-at="0.066" data-dur=".02">128</text>
+          <path class="u-line u-line--conv draw" pathLength="1" d="M167.5 95.0H209.0" data-at="0.065" data-dur="0.03"/>
+          <path class="u-line u-line--conv" d="M203.0 91.0L209.0 95.0L203.0 99.0" data-at="0.084" data-dur=".008"/>
+          <g class="grow" data-at="0.075" data-dur=".035"><rect class="u-block" x="211.0" y="40" width="10" height="110"/></g>
+          <text class="u-num" x="216" y="34" data-at="0.091" data-dur=".02">128</text>
+          <path class="u-line u-line--pool draw" pathLength="1" d="M216 153V172" data-at="0.089" data-dur="0.022"/>
+          <path class="u-line u-line--pool" d="M212 166L216 172L220 166" data-at="0.103" data-dur=".008"/>
+          <text class="u-size" transform="translate(200 231.0) rotate(-90)" data-at="0.102" data-dur=".02">128 × 128</text>
+          <g class="grow" data-at="0.102" data-dur=".035"><rect class="u-block" x="211.0" y="190" width="10" height="82"/></g>
+          <text class="u-num" x="216" y="184" data-at="0.118" data-dur=".02">128</text>
+          <path class="u-line u-line--conv draw" pathLength="1" d="M223.0 231.0H261.0" data-at="0.117" data-dur="0.03"/>
+          <path class="u-line u-line--conv" d="M255.0 227.0L261.0 231.0L255.0 235.0" data-at="0.137" data-dur=".008"/>
+          <g class="grow" data-at="0.127" data-dur=".035"><rect class="u-block" x="263.0" y="190" width="10" height="82"/></g>
+          <text class="u-num" x="268" y="184" data-at="0.143" data-dur=".02">128</text>
+          <path class="u-line u-line--pool draw" pathLength="1" d="M268 275V294" data-at="0.142" data-dur="0.022"/>
+          <path class="u-line u-line--pool" d="M264 288L268 294L272 288" data-at="0.155" data-dur=".008"/>
+          <text class="u-size" transform="translate(252 342.0) rotate(-90)" data-at="0.154" data-dur=".02">64 × 64</text>
+          <g class="grow" data-at="0.154" data-dur=".035"><rect class="u-block" x="261.0" y="312" width="14" height="60"/></g>
+          <text class="u-num" x="268" y="306" data-at="0.171" data-dur=".02">256</text>
+          <path class="u-line u-line--conv draw" pathLength="1" d="M277.0 342.0H311.0" data-at="0.169" data-dur="0.03"/>
+          <path class="u-line u-line--conv" d="M305.0 338.0L311.0 342.0L305.0 346.0" data-at="0.189" data-dur=".008"/>
+          <g class="grow" data-at="0.179" data-dur=".035"><rect class="u-block" x="313.0" y="312" width="14" height="60"/></g>
+          <text class="u-num" x="320" y="306" data-at="0.195" data-dur=".02">256</text>
+          <path class="u-line u-line--pool draw" pathLength="1" d="M320 375V394" data-at="0.194" data-dur="0.022"/>
+          <path class="u-line u-line--pool" d="M316 388L320 394L324 388" data-at="0.207" data-dur=".008"/>
+          <text class="u-size" transform="translate(304 434.0) rotate(-90)" data-at="0.206" data-dur=".02">32 × 32</text>
+          <g class="grow" data-at="0.206" data-dur=".035"><rect class="u-block" x="311.0" y="412" width="18" height="44"/></g>
+          <text class="u-num" x="320" y="406" data-at="0.223" data-dur=".02">384</text>
+          <path class="u-line u-line--conv draw" pathLength="1" d="M331.0 434.0H361.0" data-at="0.221" data-dur="0.03"/>
+          <path class="u-line u-line--conv" d="M355.0 430.0L361.0 434.0L355.0 438.0" data-at="0.241" data-dur=".008"/>
+          <g class="grow" data-at="0.231" data-dur=".035"><rect class="u-block" x="363.0" y="412" width="18" height="44"/></g>
+          <text class="u-num" x="372" y="406" data-at="0.248" data-dur=".02">384</text>
+          <path class="u-line u-line--pool draw" pathLength="1" d="M372 459V478" data-at="0.246" data-dur="0.022"/>
+          <path class="u-line u-line--pool" d="M368 472L372 478L376 472" data-at="0.259" data-dur=".008"/>
+          <text class="u-size" transform="translate(356 513.0) rotate(-90)" data-at="0.258" data-dur=".02">16 × 16</text>
+          <g class="grow" data-at="0.258" data-dur=".035"><rect class="u-block" x="361.0" y="496" width="22" height="34"/></g>
+          <text class="u-num" x="372" y="490" data-at="0.275" data-dur=".02">512</text>
+          <path class="u-line u-line--conv draw" pathLength="1" d="M385.0 513.0H411.0" data-at="0.273" data-dur="0.03"/>
+          <path class="u-line u-line--conv" d="M405.0 509.0L411.0 513.0L405.0 517.0" data-at="0.293" data-dur=".008"/>
+          <g class="grow" data-at="0.283" data-dur=".035"><rect class="u-block" x="413.0" y="496" width="22" height="34"/></g>
+          <text class="u-num" x="424" y="490" data-at="0.300" data-dur=".02">512</text>
+          <path class="u-line u-line--pool draw" pathLength="1" d="M424 533V565" data-at="0.298" data-dur="0.022"/>
+          <path class="u-line u-line--pool" d="M420 559L424 565L428 559" data-at="0.311" data-dur=".008"/>
+          <g class="grow" data-at="0.315" data-dur=".03"><rect class="u-block" x="419" y="568" width="10" height="14"/></g>
+          <path class="u-line u-line--conv draw" pathLength="1" d="M432 575H478" data-at="0.331" data-dur="0.03"/>
+          <path class="u-line u-line--conv" d="M472 571L478 575L472 579" data-at="0.351" data-dur=".008"/>
+          <g class="grow" data-at="0.344" data-dur=".04"><rect class="u-block" x="482" y="568" width="108" height="14"/></g>
+          <path class="u-line u-line--conv draw" pathLength="1" d="M592 575H632" data-at="0.369" data-dur="0.03"/>
+          <path class="u-line u-line--conv" d="M626 571L632 575L626 579" data-at="0.388" data-dur=".008"/>
+          <g class="grow" data-at="0.381" data-dur=".03"><rect class="u-block" x="635" y="568" width="10" height="14"/></g>
+          <path class="u-line u-line--up draw" pathLength="1" d="M640 565V533" data-at="0.402" data-dur="0.022"/>
+          <path class="u-line u-line--up" d="M636 539L640 533L644 539" data-at="0.415" data-dur=".008"/>
+          <path class="u-line u-line--skip draw" pathLength="1" d="M438 513.0H622.0" data-at="0.422" data-dur="0.05"/>
+          <path class="u-line u-line--skip" d="M616.0 509.0L622.0 513.0L616.0 517.0" data-at="0.459" data-dur=".008"/>
+          <g class="grow" data-at="0.451" data-dur=".035"><rect class="u-block u-block--open" x="625.0" y="496" width="30" height="34"/><rect class="u-block" x="640" y="496" width="15.0" height="34"/></g>
+          <text class="u-num" x="640" y="490" data-at="0.468" data-dur=".02">1024</text>
+          <path class="u-line u-line--conv draw" pathLength="1" d="M657.0 513.0H671.0" data-at="0.465" data-dur="0.03"/>
+          <path class="u-line u-line--conv" d="M665.0 509.0L671.0 513.0L665.0 517.0" data-at="0.484" data-dur=".008"/>
+          <g class="grow" data-at="0.473" data-dur=".035"><rect class="u-block" x="673.0" y="496" width="22" height="34"/></g>
+          <text class="u-num" x="684" y="490" data-at="0.489" data-dur=".02">512</text>
+          <path class="u-line u-line--conv draw" pathLength="1" d="M697.0 513.0H715.0" data-at="0.484" data-dur="0.03"/>
+          <path class="u-line u-line--conv" d="M709.0 509.0L715.0 513.0L709.0 517.0" data-at="0.504" data-dur=".008"/>
+          <g class="grow" data-at="0.493" data-dur=".035"><rect class="u-block" x="717.0" y="496" width="22" height="34"/></g>
+          <text class="u-num" x="728" y="490" data-at="0.509" data-dur=".02">512</text>
+          <path class="u-line u-line--up draw" pathLength="1" d="M728 478V459" data-at="0.504" data-dur="0.022"/>
+          <path class="u-line u-line--up" d="M724 465L728 459L732 465" data-at="0.518" data-dur=".008"/>
+          <path class="u-line u-line--skip draw" pathLength="1" d="M384 434.0H712.0" data-at="0.516" data-dur="0.05"/>
+          <path class="u-line u-line--skip" d="M706.0 430.0L712.0 434.0L706.0 438.0" data-at="0.552" data-dur=".008"/>
+          <g class="grow" data-at="0.545" data-dur=".035"><rect class="u-block u-block--open" x="715.0" y="412" width="26" height="44"/><rect class="u-block" x="728" y="412" width="13.0" height="44"/></g>
+          <text class="u-num" x="728" y="406" data-at="0.562" data-dur=".02">768</text>
+          <path class="u-line u-line--conv draw" pathLength="1" d="M743.0 434.0H761.0" data-at="0.558" data-dur="0.03"/>
+          <path class="u-line u-line--conv" d="M755.0 430.0L761.0 434.0L755.0 438.0" data-at="0.578" data-dur=".008"/>
+          <g class="grow" data-at="0.566" data-dur=".035"><rect class="u-block" x="763.0" y="412" width="18" height="44"/></g>
+          <text class="u-num" x="772" y="406" data-at="0.583" data-dur=".02">384</text>
+          <path class="u-line u-line--conv draw" pathLength="1" d="M783.0 434.0H805.0" data-at="0.578" data-dur="0.03"/>
+          <path class="u-line u-line--conv" d="M799.0 430.0L805.0 434.0L799.0 438.0" data-at="0.598" data-dur=".008"/>
+          <g class="grow" data-at="0.586" data-dur=".035"><rect class="u-block" x="807.0" y="412" width="18" height="44"/></g>
+          <text class="u-num" x="816" y="406" data-at="0.603" data-dur=".02">384</text>
+          <path class="u-line u-line--up draw" pathLength="1" d="M816 394V375" data-at="0.598" data-dur="0.022"/>
+          <path class="u-line u-line--up" d="M812 381L816 375L820 381" data-at="0.611" data-dur=".008"/>
+          <path class="u-line u-line--skip draw" pathLength="1" d="M330 342.0H802.0" data-at="0.610" data-dur="0.05"/>
+          <path class="u-line u-line--skip" d="M796.0 338.0L802.0 342.0L796.0 346.0" data-at="0.646" data-dur=".008"/>
+          <g class="grow" data-at="0.639" data-dur=".035"><rect class="u-block u-block--open" x="805.0" y="312" width="22" height="60"/><rect class="u-block" x="816" y="312" width="11.0" height="60"/></g>
+          <text class="u-num" x="816" y="306" data-at="0.655" data-dur=".02">512</text>
+          <path class="u-line u-line--conv draw" pathLength="1" d="M829.0 342.0H851.0" data-at="0.652" data-dur="0.03"/>
+          <path class="u-line u-line--conv" d="M845.0 338.0L851.0 342.0L845.0 346.0" data-at="0.672" data-dur=".008"/>
+          <g class="grow" data-at="0.660" data-dur=".035"><rect class="u-block" x="853.0" y="312" width="14" height="60"/></g>
+          <text class="u-num" x="860" y="306" data-at="0.677" data-dur=".02">256</text>
+          <path class="u-line u-line--conv draw" pathLength="1" d="M869.0 342.0H895.0" data-at="0.672" data-dur="0.03"/>
+          <path class="u-line u-line--conv" d="M889.0 338.0L895.0 342.0L889.0 346.0" data-at="0.692" data-dur=".008"/>
+          <g class="grow" data-at="0.680" data-dur=".035"><rect class="u-block" x="897.0" y="312" width="14" height="60"/></g>
+          <text class="u-num" x="904" y="306" data-at="0.697" data-dur=".02">256</text>
+          <path class="u-line u-line--up draw" pathLength="1" d="M904 294V275" data-at="0.692" data-dur="0.022"/>
+          <path class="u-line u-line--up" d="M900 281L904 275L908 281" data-at="0.705" data-dur=".008"/>
+          <path class="u-line u-line--skip draw" pathLength="1" d="M276 231.0H894.0" data-at="0.703" data-dur="0.05"/>
+          <path class="u-line u-line--skip" d="M888.0 227.0L894.0 231.0L888.0 235.0" data-at="0.740" data-dur=".008"/>
+          <g class="grow" data-at="0.732" data-dur=".035"><rect class="u-block u-block--open" x="897.0" y="190" width="14" height="82"/><rect class="u-block" x="904" y="190" width="7.0" height="82"/></g>
+          <text class="u-num" x="904" y="184" data-at="0.749" data-dur=".02">256</text>
+          <path class="u-line u-line--conv draw" pathLength="1" d="M913.0 231.0H941.0" data-at="0.745" data-dur="0.03"/>
+          <path class="u-line u-line--conv" d="M935.0 227.0L941.0 231.0L935.0 235.0" data-at="0.765" data-dur=".008"/>
+          <g class="grow" data-at="0.754" data-dur=".035"><rect class="u-block" x="943.0" y="190" width="10" height="82"/></g>
+          <text class="u-num" x="948" y="184" data-at="0.770" data-dur=".02">128</text>
+          <path class="u-line u-line--conv draw" pathLength="1" d="M955.0 231.0H985.0" data-at="0.765" data-dur="0.03"/>
+          <path class="u-line u-line--conv" d="M979.0 227.0L985.0 231.0L979.0 235.0" data-at="0.785" data-dur=".008"/>
+          <g class="grow" data-at="0.774" data-dur=".035"><rect class="u-block" x="987.0" y="190" width="10" height="82"/></g>
+          <text class="u-num" x="992" y="184" data-at="0.790" data-dur=".02">128</text>
+          <path class="u-line u-line--up draw" pathLength="1" d="M992 172V153" data-at="0.785" data-dur="0.022"/>
+          <path class="u-line u-line--up" d="M988 159L992 153L996 159" data-at="0.798" data-dur=".008"/>
+          <path class="u-line u-line--skip draw" pathLength="1" d="M224 95.0H982.0" data-at="0.797" data-dur="0.05"/>
+          <path class="u-line u-line--skip" d="M976.0 91.0L982.0 95.0L976.0 99.0" data-at="0.833" data-dur=".008"/>
+          <g class="grow" data-at="0.826" data-dur=".035"><rect class="u-block u-block--open" x="985.0" y="40" width="14" height="110"/><rect class="u-block" x="992" y="40" width="7.0" height="110"/></g>
+          <text class="u-num" x="992" y="34" data-at="0.842" data-dur=".02">256</text>
+          <path class="u-line u-line--conv draw" pathLength="1" d="M1001.0 95.0H1023.0" data-at="0.839" data-dur="0.03"/>
+          <path class="u-line u-line--conv" d="M1017.0 91.0L1023.0 95.0L1017.0 99.0" data-at="0.859" data-dur=".008"/>
+          <g class="grow" data-at="0.847" data-dur=".035"><rect class="u-block" x="1025.0" y="40" width="10" height="110"/></g>
+          <text class="u-num" x="1030" y="34" data-at="0.864" data-dur=".02">128</text>
+          <path class="u-line u-line--conv draw" pathLength="1" d="M1037.0 95.0H1059.0" data-at="0.859" data-dur="0.03"/>
+          <path class="u-line u-line--conv" d="M1053.0 91.0L1059.0 95.0L1053.0 99.0" data-at="0.879" data-dur=".008"/>
+          <g class="grow" data-at="0.867" data-dur=".035"><rect class="u-block" x="1061.0" y="40" width="10" height="110"/></g>
+          <text class="u-num" x="1066" y="34" data-at="0.884" data-dur=".02">128</text>
+          <path class="u-line u-line--one draw" pathLength="1" d="M1073 95H1086" data-at="0.879" data-dur="0.02"/>
+          <path class="u-line u-line--one" d="M1080 91L1086 95L1080 99" data-at="0.890" data-dur=".008"/>
+          <g class="grow" data-at="0.894" data-dur=".035"><rect class="u-block" x="1088.5" y="40" width="3" height="110"/></g>
+          <text class="u-num" x="1090" y="34" data-at="0.910" data-dur=".02">1</text>
+          <path class="u-line u-line--conv draw" pathLength="1" d="M1093 95H1110" data-at="0.905" data-dur="0.016"/>
+          <path class="u-line u-line--conv" d="M1104 91L1110 95L1104 99" data-at="0.913" data-dur=".008"/>
+          <image class="u-panel" href="../assets/projects/cranfield/predicted-noise.webp" x="1112" y="40" width="88" height="88" data-at="0.915" data-dur=".03"/>
+          <text class="u-cap u-end" x="1200" y="146" data-at="0.923" data-dur=".02">Predicted noise</text>
+        </svg>
+        <ul class="unet__key">
+          <li><i class="key key--conv"></i>Conv 3 × 3, SiLU</li>
+          <li><i class="key key--skip"></i>Copy and concat</li>
+          <li><i class="key key--pool"></i>Max pool 2 × 2</li>
+          <li><i class="key key--up"></i>Up-conv 2 × 2</li>
+          <li><i class="key key--one"></i>Conv 1 × 1</li>
+        </ul>
+      </div>
+      <div class="stage__steps">
+        <p class="stage__step" data-from="0" data-to="0.278">A 2D sketch of the architecture, for reference. The encoder takes a noised image at 256 × 256. Convolutions read it, and each max pool halves the resolution, down to 16 × 16 as channels grow from 128 to 512.</p>
+        <p class="stage__step" data-from="0.298" data-to="0.392">The bottleneck is the narrowest point, where the network holds its most compressed view of the image.</p>
+        <p class="stage__step" data-from="0.412" data-to="0.859">The decoder restores the resolution with up-convolutions. Copy and concatenate connections bring fine detail straight across from the matching encoder stage.</p>
+        <p class="stage__step" data-from="0.879" data-to="1">A final 1 × 1 convolution returns a single channel: the noise the network predicts in the image.</p>
+      </div>
+    </div>
+  </section>
+
+<div class="doc doc--even doc--closing">
+  <div class="doc-row">
+    <h3 class="doc-row__label">The result</h3>
+    <div class="doc-row__body">
+      <ul class="doc-list">
+        <li>The 3D UNet reached a validation <u>SSIM of 0.99</u>, so the denoised images kept almost all of the structure of their reference images.</li>
+        <li>It reached a validation <u>PSNR of about 37.3 dB</u>, a measure of how much noise remained relative to the signal.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<a class="next next--formula" href="formula-student.html" data-hero="../assets/projects/formula-student/night-2022.webp">
+  <span class="next__tab">Formula Student</span>
+  <span class="next__body">
+    <span class="next__hint">Next folder</span>
+    <span class="next__title">A full aero package, from CAD to the track</span>
+  </span>
+</a>
+<footer class="doc-foot doc-foot--formula">
+  <a href="../index.html#projects">All projects</a>
+  <a href="mailto:sohamdhage751@gmail.com">sohamdhage751@gmail.com</a>
+</footer>
+
+<script src="../assets/vendor/gsap.min.js"></script>
+<script src="../assets/vendor/ScrollTrigger.min.js"></script>
+<script src="../assets/vendor/lenis.min.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/stage.js"></script>
+<script src="../js/cranfield.js"></script>
+</body>
+</html>
