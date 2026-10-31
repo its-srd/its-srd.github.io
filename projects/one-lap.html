@@ -32,15 +32,15 @@
 
 <header class="doc-head doc-head--lap">
   <p class="doc-kicker">One Lap</p>
-  <h1 class="doc-title">Where 0.077 seconds went at Monza</h1>
+  <h1 class="doc-title">Telemetry analysis of the 0.077 s pole margin at Monza</h1>
   <p class="doc-context">A personal project from October 2026: F1 qualifying telemetry from Q3 at the 2025 Italian Grand Prix, analysed in Python.</p>
 </header>
 
 <main class="doc">
   <div class="doc-row">
-    <h2 class="doc-row__label">The question</h2>
+    <h2 class="doc-row__label">Objective</h2>
     <div class="doc-row__body">
-      <p>Pole position at Monza was decided by 0.077 s. Where on the lap was that time won, and how far can the public telemetry be trusted to say so?</p>
+      <p>Pole position at Monza was decided by 0.077 s. The objective was to identify where on the lap that margin was gained, and to assess how far the public telemetry can support that conclusion.</p>
     </div>
   </div>
 
@@ -50,12 +50,12 @@
   <p class="embed__note">The replay is interactive. <a href="../assets/projects/one-lap/monza-pole-animation.html?v=2">Open it on its own page</a>.</p>
 
   <div class="doc-row">
-    <h2 class="doc-row__label">What I did</h2>
+    <h2 class="doc-row__label">Methodology</h2>
     <div class="doc-row__body">
       <ul class="doc-list">
-        <li>Built a delta time analysis of the pole and P2 laps in Python.</li>
-        <li>Traced the gap to straight line speed and braking about 10 m later into Turn 1.</li>
-        <li>Lined up both laps on a common clock to build the ghost car replay above.</li>
+        <li>Developed a delta time analysis of the pole and P2 laps in Python.</li>
+        <li>Attributed the gap to straight-line speed and braking about 10 m later into Turn 1.</li>
+        <li>Aligned both laps on a common time base to produce the ghost car replay above.</li>
       </ul>
     </div>
   </div>
@@ -66,16 +66,16 @@
   </figure>
 
   <div class="doc-row">
-    <h2 class="doc-row__label">The result</h2>
+    <h2 class="doc-row__label">Results</h2>
     <div class="doc-row__body">
-      <p>The official 0.077 s gap reproduced to <u>within 0.006 s</u>, with a lead of <u>about 0.15 s</u> already built by Turn 2.</p>
+      <p>The official 0.077 s gap was reproduced to <u>within 0.006 s</u>, with a lead of <u>about 0.15 s</u> established by Turn 2.</p>
     </div>
   </div>
 
   <div class="doc-row">
-    <h2 class="doc-row__label">How I knew it was right</h2>
+    <h2 class="doc-row__label">Verification and validation</h2>
     <div class="doc-row__body">
-      <p>Reproducing the official gap was the first check. Along the way I detected a faulty distance channel and flagged 0.9 s data dropouts as low confidence, which prevented a wrong conclusion.</p>
+      <p>Reproducing the official gap provided the first check. I also detected a faulty distance channel and flagged 0.9 s data dropouts as low confidence, which prevented an incorrect conclusion.</p>
     </div>
   </div>
 

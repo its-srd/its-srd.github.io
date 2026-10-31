@@ -38,9 +38,9 @@
 
 <main class="doc">
   <div class="doc-row">
-    <h2 class="doc-row__label">The question</h2>
+    <h2 class="doc-row__label">Objective</h2>
     <div class="doc-row__body">
-      <p>A surface jet pump uses a high pressure flow to entrain a low pressure one. Could a CFD model predict that entrainment reliably enough to support the client's targets?</p>
+      <p>A surface jet pump uses a high pressure flow to entrain a low pressure one. The objective was to establish whether a CFD model could predict that entrainment reliably enough to support the client's targets.</p>
     </div>
   </div>
 
@@ -74,39 +74,39 @@
       <span class="tag tag--end" style="right:0;top:31%" data-at=".82">Mixed flow out</span>
     </div>
     <div class="stage__steps">
-      <p class="stage__step" data-from="0" data-to=".16">A surface jet pump has no moving parts. This is a generic sketch of how one works, not the client's geometry.</p>
-      <p class="stage__step" data-from=".18" data-to=".41">High pressure water enters from the left. The nozzle narrows the stream into a fast jet, and its pressure falls.</p>
-      <p class="stage__step" data-from=".43" data-to=".58">That low pressure draws gas in through the inlet above, around the nozzle and into the throat.</p>
-      <p class="stage__step" data-from=".6" data-to=".78">Along the mixing tube the fast water drags the gas with it, and the gas spreads through the stream until the two are evenly mixed.</p>
-      <p class="stage__step" data-from=".8" data-to="1">The diffuser widens, slowing the mixture and recovering pressure before it leaves through the discharge.</p>
+      <p class="stage__step" data-from="0" data-to=".16">A surface jet pump has no moving parts. This generic sketch illustrates the operating principle and does not represent the client's geometry.</p>
+      <p class="stage__step" data-from=".18" data-to=".41">High pressure water enters from the left. The nozzle accelerates the stream into a high velocity jet, reducing its static pressure.</p>
+      <p class="stage__step" data-from=".43" data-to=".58">The resulting low pressure entrains gas through the upper inlet, around the nozzle and into the throat.</p>
+      <p class="stage__step" data-from=".6" data-to=".78">Along the mixing tube, the high velocity water carries the gas with it, and the gas disperses through the stream until the two phases are well mixed.</p>
+      <p class="stage__step" data-from=".8" data-to="1">The diverging diffuser decelerates the mixture and recovers static pressure before discharge.</p>
     </div>
   </div>
 </section>
 
 <div class="doc">
   <div class="doc-row">
-    <h2 class="doc-row__label">What I did</h2>
+    <h2 class="doc-row__label">Methodology</h2>
     <div class="doc-row__body">
       <ul class="doc-list">
-        <li>Delivered the study independently, building a multiphase model in ANSYS Fluent using VOF, against the client's requirements.</li>
-        <li>Found the low pressure entrainment was underpredicted by 60%, diagnosed the cause using transient CFD and corrected the set up.</li>
-        <li>Ran a parametric study across seven operating conditions and recommended the boundary conditions.</li>
-        <li>Issued the technical report, setting out the approach, inputs, assumptions and findings.</li>
+        <li>Delivered the study independently, developing a multiphase VOF model in ANSYS Fluent to the client's requirements.</li>
+        <li>Identified a 60% underprediction of low pressure entrainment, diagnosed the cause using transient CFD and corrected the set-up.</li>
+        <li>Performed a parametric study across seven operating conditions and recommended the boundary conditions.</li>
+        <li>Issued a technical report documenting the approach, inputs, assumptions and findings.</li>
       </ul>
     </div>
   </div>
 
   <div class="doc-row">
-    <h2 class="doc-row__label">The result</h2>
+    <h2 class="doc-row__label">Results</h2>
     <div class="doc-row__body">
-      <p>Low pressure entrainment moved from 60% out to <u>within 2.5%</u>. The recommended boundary conditions met the client's targets <u>within 6%</u>, and the study was delivered <u>within one month</u>.</p>
+      <p>The low pressure entrainment error was reduced from 60% to <u>within 2.5%</u>. The recommended boundary conditions met the client's targets <u>within 6%</u>, and the study was delivered <u>within one month</u>.</p>
     </div>
   </div>
 
   <div class="doc-row">
-    <h2 class="doc-row__label">How I knew it was right</h2>
+    <h2 class="doc-row__label">Verification and validation</h2>
     <div class="doc-row__body">
-      <p>I validated the model against industrial reference data, matching the high pressure mass flow to <u>within 3.5%</u>. A result that disagreed with that data was treated as a question to answer, not a number to report.</p>
+      <p>I validated the model against industrial reference data, matching the high pressure mass flow to <u>within 3.5%</u>. Any disagreement with those data was investigated and resolved rather than simply reported.</p>
     </div>
   </div>
 </div>
@@ -115,7 +115,7 @@
   <span class="next__tab">One Lap</span>
   <span class="next__body">
     <span class="next__hint">Next folder</span>
-    <span class="next__title">Where 0.077 seconds went at Monza</span>
+    <span class="next__title">Telemetry analysis of the 0.077 s pole margin at Monza</span>
   </span>
 </a>
 <footer class="doc-foot doc-foot--lap">

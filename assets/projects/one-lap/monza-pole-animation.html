@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'sha256-J9hFQSamAJuU4/fv8Ra9kSXCwSniLyw8GNqLlH0J56w='; style-src 'self' 'unsafe-inline'; img-src 'self'; font-src 'self'; frame-src 'none'; base-uri 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'sha256-BxxFFgTujZtwql+VJ1AEMYEQgMmxAlcYSuRNCYw+HhA='; style-src 'self' 'unsafe-inline'; img-src 'self'; font-src 'self'; frame-src 'none'; base-uri 'none'; form-action 'none'">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Pole Lap Duel</title>
 <style>
@@ -569,7 +569,7 @@ function seek(frame) {
 }
 
 function buildPage() {
-  $('ttl').textContent = `${DATA.title}: ${CAR_A.code} vs ${CAR_B.code} pole lap duel`;
+  $('ttl').textContent = `${DATA.title}: ${CAR_A.code} vs ${CAR_B.code} pole lap comparison`;
   $('subt').textContent = `${CAR_A.code} ${formatLapTime(CAR_A.laptime)}   ·   ${CAR_B.code} ${formatLapTime(CAR_B.laptime)}   ·   official gap ${DATA.officialGap.toFixed(3)} s`;
 
   CARS.forEach((car, k) => {

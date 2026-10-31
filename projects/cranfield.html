@@ -33,7 +33,7 @@
 <header class="doc-head">
   <p class="doc-kicker">Cranfield MSc</p>
   <h1 class="doc-title">Fan powered suction for inverted vehicle adhesion</h1>
-  <p class="doc-context">Two pieces of work from my MSc in Computational Fluid Dynamics at Cranfield University: my thesis, and a group project in deep learning.</p>
+  <p class="doc-context">Two projects from my MSc in Computational Fluid Dynamics at Cranfield University: my thesis and a group project in deep learning.</p>
 </header>
 
 <main class="doc doc--even">
@@ -41,9 +41,9 @@
     <p class="doc__part-meta doc__part-meta--first">MSc thesis, June to August 2025. Supervised by Dr Tom-Robin Teschner.</p>
 
     <div class="doc-row">
-      <h2 class="doc-row__label">The question</h2>
+      <h2 class="doc-row__label">Objective</h2>
       <div class="doc-row__body">
-        <p>The McMurtry Spéirling has shown that fan driven suction can generate extraordinary downforce which, unlike a wing, does not depend on speed. Could a benchmark road car stay adhered upside down with such a system?</p>
+        <p>The McMurtry Spéirling has demonstrated that fan-driven suction can generate very high downforce which, unlike that of a wing, does not depend on speed. This thesis investigated whether a benchmark road car could remain adhered in an inverted orientation using such a system.</p>
       </div>
     </div>
   </section>
@@ -91,10 +91,10 @@
         <span class="tag" style="left:61%;top:84%;margin-left:12px" data-at=".78"><u>37.9 kN</u> downforce</span>
       </div>
       <div class="stage__steps">
-        <p class="stage__step" data-from="0" data-to=".21">A modified DrivAer, the benchmark road car geometry, upside down against a ceiling. This is a schematic, with the clearances enlarged so they can be seen.</p>
-        <p class="stage__step" data-from=".23" data-to=".42">Restrictor walls and side skirts, fitted inside the wheelbase, seal the underbody to form a suction pocket.</p>
-        <p class="stage__step" data-from=".44" data-to=".67">Twin fans beneath the car draw air out of the pocket and its pressure falls. Air can only leak back through the narrow gap under the skirts.</p>
-        <p class="stage__step" data-from=".69" data-to="1">At a suction of 21 kPa the pocket produces <u>about 37.9 kN</u> of downforce, above the <u>34.6 kN</u> required to carry the vehicle and fans with a safety factor of 1.8.</p>
+        <p class="stage__step" data-from="0" data-to=".21">A modified DrivAer benchmark road car, inverted against a ceiling. The schematic is not to scale: clearances are enlarged for clarity.</p>
+        <p class="stage__step" data-from=".23" data-to=".42">Restrictor walls and side skirts, positioned within the wheelbase, seal the underbody to form a suction pocket.</p>
+        <p class="stage__step" data-from=".44" data-to=".67">Twin fans beneath the car extract air from the pocket, reducing its pressure. Leakage is confined to the narrow gap under the skirts.</p>
+        <p class="stage__step" data-from=".69" data-to="1">At a suction of 21 kPa the pocket generates <u>about 37.9 kN</u> of downforce, exceeding the <u>34.6 kN</u> required to support the vehicle and fans with a safety factor of 1.8.</p>
       </div>
     </div>
   </section>
@@ -102,22 +102,22 @@
 <div class="doc doc--even">
   <section aria-label="Thesis method and results">
     <div class="doc-row">
-      <h2 class="doc-row__label">What I did</h2>
+      <h2 class="doc-row__label">Methodology</h2>
       <div class="doc-row__body">
         <ul class="doc-list">
-          <li>Cleaned up the DrivAer reference geometry in SpaceClaim, adding underbody restrictor walls, skirts and twin fan openings to form a sealed suction pocket, and made it watertight for meshing.</li>
-          <li>Ran steady RANS CFD on HPC with the realizable k-ε model, mapping downforce against suction level, ride height and skirt clearance across 17 cases.</li>
-          <li>Automated meshing, runs, image generation and file saving with Fluent TUI journals and Python, reducing each repeated case to two or three clicks.</li>
+          <li>Prepared the DrivAer reference geometry in SpaceClaim, incorporating underbody restrictor walls, skirts and twin fan openings to form a sealed suction pocket, and produced a watertight model for meshing.</li>
+          <li>Performed steady RANS simulations on HPC with the realizable k-ε model, quantifying the sensitivity of downforce to suction level, ride height and skirt clearance across 17 cases.</li>
+          <li>Automated meshing, solution runs, image generation and file saving with Fluent TUI journals and Python, so that each repeat case required only two or three clicks.</li>
           <li>Sized the fan system from the CFD results.</li>
         </ul>
       </div>
     </div>
 
     <div class="doc-row">
-      <h2 class="doc-row__label">The result</h2>
+      <h2 class="doc-row__label">Results</h2>
       <div class="doc-row__body">
-        <p><u>About 37.9 kN</u> of downforce at a 21 kPa design point, <u>9.6% above</u> the 34.6 kN target. The best configuration had a ride height of <u>about 20 mm</u> and a skirt clearance of <u>about 10 mm</u>.</p>
-        <p>Raising either clearance let air leak around the skirts and weakened the suction pocket, so effective sealing is critical to inverted adhesion.</p>
+        <p>The 21 kPa design point produced <u>about 37.9 kN</u> of downforce, <u>9.6% above</u> the 34.6 kN target. The best-performing configuration had a ride height of <u>about 20 mm</u> and a skirt clearance of <u>about 10 mm</u>.</p>
+        <p>Increasing either clearance allowed air to leak around the skirts and weakened the suction pocket, showing that effective sealing is critical to inverted adhesion.</p>
       </div>
     </div>
 
@@ -137,9 +137,9 @@
     </div>
 
     <div class="doc-row">
-      <h2 class="doc-row__label">How I knew it was right</h2>
+      <h2 class="doc-row__label">Verification and validation</h2>
       <div class="doc-row__body">
-        <p>Before comparing any design cases, I benchmarked turbulence models, ran mesh independence studies and assessed y+. Hand calculations set and checked the targets. The work was presented in a written technical report and a poster.</p>
+        <p>Before comparing design cases, I benchmarked turbulence models, performed mesh independence studies and assessed y+. Hand calculations were used to define and check the targets. The work was presented in a written technical report and a poster.</p>
       </div>
     </div>
 
@@ -159,9 +159,9 @@
     <p class="doc__part-meta">Cranfield University group project, March to May 2025.</p>
 
     <div class="doc-row">
-      <h3 class="doc-row__label">What I did</h3>
+      <h3 class="doc-row__label">Methodology</h3>
       <div class="doc-row__body">
-        <p>Trained 3D UNet and diffusion based models in Python and TensorFlow on large datasets, using the university HPC cluster, and tuned their hyperparameters.</p>
+        <p>Trained 3D UNet and diffusion-based models in Python and TensorFlow on large datasets, using the university HPC cluster, and optimised their hyperparameters.</p>
       </div>
     </div>
   </section>
@@ -320,21 +320,21 @@
         </ul>
       </div>
       <div class="stage__steps">
-        <p class="stage__step" data-from="0" data-to="0.278">A 2D sketch of the architecture, for reference. The encoder takes a noised image at 256 × 256. Convolutions read it, and each max pool halves the resolution, down to 16 × 16 as channels grow from 128 to 512.</p>
-        <p class="stage__step" data-from="0.298" data-to="0.392">The bottleneck is the narrowest point, where the network holds its most compressed view of the image.</p>
-        <p class="stage__step" data-from="0.412" data-to="0.859">The decoder restores the resolution with up-convolutions. Copy and concatenate connections bring fine detail straight across from the matching encoder stage.</p>
-        <p class="stage__step" data-from="0.879" data-to="1">A final 1 × 1 convolution returns a single channel: the noise the network predicts in the image.</p>
+        <p class="stage__step" data-from="0" data-to="0.278">A 2D sketch of the architecture, for reference. The encoder receives a noised image at 256 × 256. Convolutions extract features, and each max pooling stage halves the resolution, down to 16 × 16, as the channel count increases from 128 to 512.</p>
+        <p class="stage__step" data-from="0.298" data-to="0.392">The bottleneck holds the most compressed representation of the image.</p>
+        <p class="stage__step" data-from="0.412" data-to="0.859">The decoder restores spatial resolution through up-convolutions, while copy and concatenate connections carry fine detail directly from the corresponding encoder stage.</p>
+        <p class="stage__step" data-from="0.879" data-to="1">A final 1 × 1 convolution outputs a single channel: the predicted noise.</p>
       </div>
     </div>
   </section>
 
 <div class="doc doc--even doc--closing">
   <div class="doc-row">
-    <h3 class="doc-row__label">The result</h3>
+    <h3 class="doc-row__label">Results</h3>
     <div class="doc-row__body">
       <ul class="doc-list">
-        <li>The 3D UNet reached a validation <u>SSIM of 0.99</u>, so the denoised images kept almost all of the structure of their reference images.</li>
-        <li>It reached a validation <u>PSNR of about 37.3 dB</u>, a measure of how much noise remained relative to the signal.</li>
+        <li>The 3D UNet achieved a validation <u>SSIM of 0.99</u>, indicating that the denoised images preserved almost all of the structure of their reference images.</li>
+        <li>It achieved a validation <u>PSNR of about 37.3 dB</u>, a measure of residual noise relative to the signal.</li>
       </ul>
     </div>
   </div>
@@ -344,7 +344,7 @@
   <span class="next__tab">Formula Student</span>
   <span class="next__body">
     <span class="next__hint">Next folder</span>
-    <span class="next__title">A full aero package, from CAD to the track</span>
+    <span class="next__title">Aerodynamic package design, simulation and on-track correlation</span>
   </span>
 </a>
 <footer class="doc-foot doc-foot--formula">
