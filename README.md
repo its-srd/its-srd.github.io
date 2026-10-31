@@ -4,7 +4,7 @@ A static site with no build step: plain HTML, CSS and JavaScript.
 
 ## Run it
 
-Double-click `index.html`, or serve the folder:
+Serve the folder, because the security policy in each page blocks scripts opened straight from disk:
 
 ```
 python -m http.server 8000
