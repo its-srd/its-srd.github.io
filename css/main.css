@@ -15,14 +15,16 @@
   --tunnel: #0F1E28;
   --smoke: #E6ECEE;
   --soft: rgba(230, 236, 238, 0.68);
-  --rule: rgba(230, 236, 238, 0.16);
+  --rule: rgba(233, 161, 91, 0.26);
+  --hotwire: #E9A15B;
+  --paper: #DDD3BD;
   --sheet: #9DAEB6;
   --plot-grid: rgba(230, 236, 238, 0.1);
 
-  --stock-cranfield: #182C39;
-  --stock-formula: #1E3543;
-  --stock-caltec: #253F4E;
-  --stock-lap: #2D4A59;
+  --stock-cranfield: #1B3350;
+  --stock-formula: #17392F;
+  --stock-caltec: #352A4A;
+  --stock-lap: #4A2026;
 
   --serif: "Newsreader", Georgia, serif;
   --sans: "Instrument Sans", "Helvetica Neue", Arial, sans-serif;
@@ -1135,3 +1137,22 @@ a { color: inherit; -webkit-tap-highlight-color: transparent; }
   }
   @view-transition { navigation: none; }
 }
+
+/* Hot wire marks what is measured or actionable, and the small labels that guide the eye. */
+::selection { background: var(--hotwire); color: var(--tunnel); }
+:focus-visible { outline-color: var(--hotwire); }
+.folder:focus-visible .folder__front { outline-color: var(--hotwire); }
+.hero__role { color: var(--hotwire); }
+.nav a:hover, .hero__cue:hover { text-decoration-color: var(--hotwire); }
+#contraction-fade stop:nth-child(3), #contraction-fade stop:nth-child(4) { stop-color: var(--hotwire); }
+#climb-rise stop:last-child { stop-color: var(--hotwire); }
+.climb__point--latest::before { background: var(--hotwire); }
+.doc u, .stage u, .tag u, .folder__result u { text-decoration-color: var(--hotwire); }
+.folder__open, .contact__links a, .doc--even .doc-row__body a, .doc-foot a { text-decoration-color: var(--hotwire); }
+.folder__sheet { background: var(--paper); }
+.has-motion .events__progress span { background: var(--hotwire); }
+
+.section-title, .doc-kicker, .next__hint, .degree__award { color: var(--hotwire); }
+.doc-list li::before { background: var(--hotwire); }
+.back svg { color: var(--hotwire); }
+.nav a:hover, .hero__cue:hover { color: var(--hotwire); }

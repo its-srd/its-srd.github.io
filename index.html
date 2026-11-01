@@ -110,7 +110,13 @@
       <h2 class="section-title" data-rise>Achievements</h2>
       <p class="achievements__note" data-rise>Competition results with Team Maverick.</p>
       <div class="climb">
-        <svg class="climb__line" viewBox="0 0 1000 400" preserveAspectRatio="none" aria-hidden="true" fill="none" stroke="currentColor">
+        <svg class="climb__line" viewBox="0 0 1000 400" preserveAspectRatio="none" aria-hidden="true" fill="none" stroke="url(#climb-rise)">
+          <defs>
+            <linearGradient id="climb-rise" gradientUnits="userSpaceOnUse" x1="400" y1="0" x2="720" y2="0">
+              <stop offset="0" stop-color="currentColor"/>
+              <stop offset="1" stop-color="currentColor"/>
+            </linearGradient>
+          </defs>
           <path d="M60 220H400C540 220 560 40 720 40"/>
         </svg>
         <ol class="climb__results">
@@ -224,7 +230,7 @@
             <span class="folder__sheet"></span>
             <div class="folder__front">
               <div>
-                <h3 class="folder__title">Telemetry analysis of the 0.077 s pole margin at Monza</h3>
+                <h3 class="folder__title">Telemetry analysis of the 0.077&nbsp;s pole margin at Monza</h3>
                 <p class="folder__summary">A Python telemetry analysis of the pole and P2 laps from Q3 at the 2025 Italian Grand Prix, with a ghost car replay.</p>
                 <p class="folder__result">Official gap reproduced to <u>within 0.006 s</u>.</p>
               </div>
